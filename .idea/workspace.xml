@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="acfc0579-0dfb-42f1-a3db-71f88c5881ec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.warden/conf/01-php.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.warden/warden-env.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PROJECT.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfiles/php-fpm/.composer/auth.json.tmpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfiles/php-fpm/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/adminuser.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/cache.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/core.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/dbip.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/docker-destroy.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/fix-dbpermissions.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/fix-elasticsearch.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/init.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/magento-install.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/magento-setup.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/mageplaza.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/mailhog.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/restore-db.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/revendor.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/sample-data.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/save-db.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/theme.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/urls.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="20OURCDTdh42kyUO6IHsfmponQD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="acfc0579-0dfb-42f1-a3db-71f88c5881ec" name="Default Changelist" comment="" />
+      <created>1635915116526</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635915116526</updated>
+      <workItem from="1635915118542" duration="288000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

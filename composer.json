@@ -1,0 +1,14 @@
+{
+    "name": "jzielinski/magento2warden",
+    "description": "Magento2 Warden project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jarosław Zieliński",
+            "email": "jarek.zielinski82@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
