@@ -6,23 +6,6 @@ brew install davidalger/warden/warden
 warden svc up
 ## Init Warden env
 warden sign-certificate ${TRAEFIK_DOMAIN}
-warden sign-certificate matisere.radiateur-en-fonte.fr
-warden sign-certificate matisere.seche-serviette-radiateur.fr
-warden sign-certificate matisere.plateforme-direct.fr
-warden sign-certificate matisere.echelledirect.fr
-warden sign-certificate matisere.neosloth.com
-warden sign-certificate matisere.neootter.com
-warden sign-certificate matisere.it
-warden sign-certificate matisere.ch
-warden sign-certificate matisere.be
-warden sign-certificate matisere.fr
-warden sign-certificate matisere.de
-warden sign-certificate matisere.seche-serviette.ch
-warden sign-certificate matisere.seche-serviette.be
-warden sign-certificate matisere.scaldasalviette-expert.it
-warden sign-certificate matisere.leiter-experten.de
-warden sign-certificate matisere.echelledirect.be
-warden sign-certificate matisere.scala-expert.it
 warden env up -d
 warden env exec -u root -T php-fpm bash -c "`which envsubst` < /home/www-data/.composer/auth.json.tmpl > /home/www-data/.composer/auth.json"
 warden env exec -u root -T php-fpm bash -c "sudo chown www-data:www-data -R /home/www-data/"
