@@ -1,9 +1,9 @@
 #!/bin/sh
 
-mdkir -p .warden/conf
-mdkir -p dockerfiles/php-fpm
-mdkir -p dockerfiles/php-fpm/.composer
-mdkir -p includes
+mkdir -p .warden/conf
+mkdir -p dockerfiles/php-fpm
+mkdir -p dockerfiles/php-fpm/.composer
+mkdir -p includes
 
 if [ ! -f ".env.dist" ];
 then
