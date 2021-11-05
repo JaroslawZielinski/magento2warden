@@ -25,7 +25,7 @@ composer create-project --repository-url=https://repo.magento.com/ \
 rsync -a /tmp/exampleproject/ /var/www/html/
 rm -rf /tmp/exampleproject/
 "
-warden env exec -T php-fpm composer config repositories.magento2warden vcs https://github.com/JaroslawZielinski/magento2warden.git
-warden env exec -T php-fpm composer require --dev jaroslawzielinski/magento2warden dev-master
-warden env exec -T php-fpm sh vendor/jaroslawzielinski/magento2warden/setup.sh
+warden env exec -T php-fpm bash -c "composer config repositories.magento2warden vcs https://github.com/JaroslawZielinski/magento2warden.git"
+warden env exec -T php-fpm bash -c "composer require --dev jaroslawzielinski/magento2warden dev-master"
+warden env exec -T php-fpm bash -c "sh vendor/jaroslawzielinski/magento2warden/setup.sh"
 :: "Finished."
