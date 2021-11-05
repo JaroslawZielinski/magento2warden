@@ -4,6 +4,7 @@ mkdir -p .warden/conf
 mkdir -p dockerfiles/php-fpm
 mkdir -p dockerfiles/php-fpm/.composer
 mkdir -p includes
+mkdir -p 2fa_credentials
 
 if [ ! -f ".env.dist" ];
 then
