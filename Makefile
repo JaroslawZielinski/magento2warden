@@ -38,6 +38,12 @@ theme: ## Theme
 	./includes/adminuser.sh
 	make db-ip urls
 
+assets: ## Assets
+	make fix-dbpermissions
+	./includes/fix-elasticsearch.sh
+	./includes/assets.sh
+	make db-ip urls
+
 revendor: ## Revendor
 	./includes/revendor.sh
 

@@ -198,6 +198,14 @@ else
   echo "\"includes/theme.sh\" already exists."
 fi
 
+if [ ! -f "includes/assets.sh" ];
+then
+  echo "\"includes/assets.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/assets.sh includes/
+else
+  echo "\"includes/assets.sh\" already exists."
+fi
+
 if [ ! -f "includes/urls.sh" ];
 then
   echo "\"includes/urls.sh\" copied."
