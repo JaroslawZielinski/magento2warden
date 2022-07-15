@@ -36,7 +36,7 @@ theme: ## Theme
 	./includes/fix-elasticsearch.sh
 	./includes/theme.sh
 	./includes/adminuser.sh
-	make db-ip urls
+	make db-ip urls mailhog
 
 assets: ## Assets
 	make fix-dbpermissions
