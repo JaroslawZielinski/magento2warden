@@ -30,6 +30,7 @@ urls: ## Show Urls
 
 cache: ## Cache
 	./includes/cache.sh
+	make db-ip urls mailhog
 
 theme: ## Theme
 	make fix-dbpermissions
@@ -42,7 +43,7 @@ assets: ## Assets
 	make fix-dbpermissions
 	./includes/fix-elasticsearch.sh
 	./includes/assets.sh
-	make db-ip urls
+	make db-ip urls mailhog
 
 revendor: ## Revendor
 	./includes/revendor.sh
