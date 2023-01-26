@@ -55,6 +55,8 @@ bin/magento config:set --lock-env catalog/search/enable_eav_indexer 1
 
 bin/magento config:set --lock-env dev/static/sign 0
 
+bin/magento config:set --lock-env admin/security/session_lifetime 31536000
+
 bin/magento deploy:mode:set -s developer
 bin/magento cache:disable block_html full_page
 
