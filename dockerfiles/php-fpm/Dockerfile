@@ -1,4 +1,4 @@
-FROM docker.io/wardenenv/php-fpm:8.0-magento2
+FROM docker.io/wardenenv/php-fpm:7.4-magento2
 USER root
 # Install missing dependencies
 RUN yum -y update
@@ -12,3 +12,4 @@ RUN sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=com
 COPY .composer/auth.json.tmpl /root/.composer/auth.json.tmpl
 COPY .composer/auth.json.tmpl /home/www-data/.composer/auth.json.tmpl
 USER www-data
+
