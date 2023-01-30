@@ -1,10 +1,10 @@
 #!/bin/sh
 
 mkdir -p .warden/conf
-mkdir -p dockerfiles/php-fpm
 mkdir -p dockerfiles/php-fpm/.composer
 mkdir -p includes
 mkdir -p 2fa_credentials
+mkdir -p dbtests
 
 if [ ! -f ".env.dist" ];
 then
@@ -212,4 +212,44 @@ then
   cp vendor/jaroslawzielinski/magento2warden/includes/urls.sh includes/
 else
   echo "\"includes/urls.sh\" already exists."
+fi
+
+if [ ! -f "dbtests/config.cnf" ];
+then
+  echo "\"dbtests/config.cnf\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/dbtests/config.cnf dbtests/
+else
+  echo "\"dbtests/config.cnf\" already exists."
+fi
+
+if [ ! -f "dbtests/idFinder.sh" ];
+then
+  echo "\"dbtests/idFinder.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/dbtests/idFinder.sh dbtests/
+else
+  echo "\"dbtests/idFinder.sh\" already exists."
+fi
+
+if [ ! -f "dbtests/README.md" ];
+then
+  echo "\"dbtests/README.md\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/dbtests/README.md dbtests/
+else
+  echo "\"dbtests/README.md\" already exists."
+fi
+
+if [ ! -f "dbtests/structureFinder.sh" ];
+then
+  echo "\"dbtests/structureFinder.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/dbtests/structureFinder.sh dbtests/
+else
+  echo "\"dbtests/structureFinder.sh\" already exists."
+fi
+
+if [ ! -f "dbtests/wordFinder.sh" ];
+then
+  echo "\"dbtests/wordFinder.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/dbtests/wordFinder.sh dbtests/
+else
+  echo "\"dbtests/wordFinder.sh\" already exists."
 fi
