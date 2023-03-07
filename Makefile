@@ -33,6 +33,8 @@ cache: ## Cache
 	make db-ip urls mailhog
 
 theme: ## Theme
+	rm -rf generated/
+	git checkout generated/.htaccess
 	make fix-dbpermissions
 	./includes/fix-elasticsearch.sh
 	./includes/theme.sh
