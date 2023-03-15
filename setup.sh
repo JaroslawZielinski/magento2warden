@@ -214,6 +214,14 @@ else
   echo "\"includes/urls.sh\" already exists."
 fi
 
+if [ ! -f "includes/devurnfix.sh" ];
+then
+  echo "\"includes/devurnfix.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/devurnfix.sh includes/
+else
+  echo "\"includes/devurnfix.sh\" already exists."
+fi
+
 if [ ! -f "dbtests/config.cnf" ];
 then
   echo "\"dbtests/config.cnf\" copied."
