@@ -4,8 +4,7 @@ Magento2 project using warden
 # how to use shell commands
 ```ssh
 cd YourProject
-composer config repositories.magento2warden vcs https://github.com/JaroslawZielinski/magento2warden.git
-composer require --dev jaroslawzielinski/magento2warden dev-master
+composer require --dev jaroslawzielinski/magento2warden
 sh vendor/jaroslawzielinski/magento2warden/setup.sh
 cp .env.dist .env
 make init
