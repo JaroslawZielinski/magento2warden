@@ -222,6 +222,14 @@ else
   echo "\"includes/devurnfix.sh\" already exists."
 fi
 
+if [ ! -f "includes/jarkokit.sh" ];
+then
+  echo "\"includes/jarkokit.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/jarkokit.sh includes/
+else
+  echo "\"includes/jarkokit.sh\" already exists."
+fi
+
 if [ ! -f "dbtests/config.cnf" ];
 then
   echo "\"dbtests/config.cnf\" copied."
