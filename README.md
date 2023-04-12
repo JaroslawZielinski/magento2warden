@@ -2,6 +2,7 @@
 Magento2 project using warden
 
 # how to use shell commands
+in [packagist](https://packagist.org/packages/jaroslawzielinski/magento2warden)
 ```ssh
 cd YourProject
 composer require --dev jaroslawzielinski/magento2warden
