@@ -4,7 +4,7 @@ source includes/core.sh
 ## Create User and setup 2FA
 ## Configure 2FA provider
 OTPAUTH_QRI=
-TFA_SECRET=$(echo -n \'${SECURITY_TFA_GOOGLE_SECRET}\' | base64)
+TFA_SECRET=$(echo -n "${SECURITY_TFA_GOOGLE_SECRET}" | base32)
 OTPAUTH_URL=$(printf "otpauth://totp/%s%%3Alocaladmin%%40example.com?issuer=%s&secret=%s" \
     "${TRAEFIK_SUBDOMAIN}.${TRAEFIK_DOMAIN}" "${TRAEFIK_SUBDOMAIN}.${TRAEFIK_DOMAIN}" "${TFA_SECRET}"
 )
