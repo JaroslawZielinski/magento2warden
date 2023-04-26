@@ -3,9 +3,8 @@ source includes/core.sh
 :: "Start"
 ## Create User and setup 2FA
 ## Configure 2FA provider
-PWGEN=$(warden env exec -T php-fpm bash -c "pwgen -A1 128")
 OTPAUTH_QRI=
-TFA_SECRET=$(warden env exec -T php-fpm bash -c "echo -n '${PWGEN}' | base64")
+TFA_SECRET=$(echo -n \'${SECURITY_TFA_GOOGLE_SECRET}\' | base64)
 OTPAUTH_URL=$(printf "otpauth://totp/%s%%3Alocaladmin%%40example.com?issuer=%s&secret=%s" \
     "${TRAEFIK_SUBDOMAIN}.${TRAEFIK_DOMAIN}" "${TRAEFIK_SUBDOMAIN}.${TRAEFIK_DOMAIN}" "${TFA_SECRET}"
 )
