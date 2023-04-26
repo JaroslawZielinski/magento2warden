@@ -2,7 +2,7 @@ FROM docker.io/wardenenv/php-fpm:8.1-magento2
 USER root
 # Install missing dependencies
 RUN yum -y update
-RUN yum -y install wget curl mc php-gettext
+RUN yum -y install mc php-gettext
 RUN cd ~
 RUN curl -sS https://getcomposer.org/installer -o /tmp/composer-setup.php
 RUN HASH=`curl -sS https://composer.github.io/installer.sig`
