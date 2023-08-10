@@ -7,10 +7,10 @@ warden svc up
 ## Init Warden env
 warden sign-certificate ${TRAEFIK_DOMAIN}
 warden env up -d
-warden env exec -u root -T php-fpm bash -c "`which envsubst` < /home/www-data/.composer/auth.json.tmpl > /home/www-data/.composer/auth.json"
+warden env exec -u root -T php-fpm bash -c "/usr/bin/envsubst < /home/www-data/.composer/auth.json.tmpl > /home/www-data/.composer/auth.json"
 warden env exec -u root -T php-fpm bash -c "sudo chown www-data:www-data -R /home/www-data/"
 . includes/fix-dbpermissions.sh
-warden env exec -u root -T php-fpm bash -c "`which envsubst` < /root/.composer/auth.json.tmpl > /root/.composer/auth.json"
+warden env exec -u root -T php-fpm bash -c "/usr/bin/envsubst < /root/.composer/auth.json.tmpl > /root/.composer/auth.json"
 read -p "Rebuild project with composer (y/n)?" choice
 case "$choice" in
   y|Y ) echo "yes";;
@@ -22,10 +22,9 @@ META_VERSION=2.4.x
 warden env exec -T php-fpm bash -c "
 composer create-project --repository-url=https://repo.magento.com/ \
     \"${META_PACKAGE}\" /tmp/exampleproject \"${META_VERSION}\"
-rsync -a /tmp/exampleproject/ /var/www/html/
-rm -rf /tmp/exampleproject/
+#rsync -a /tmp/exampleproject/ /var/www/html/
+#rm -rf /tmp/exampleproject/
 "
-warden env exec -T php-fpm bash -c "composer config repositories.magento2warden vcs https://github.com/JaroslawZielinski/magento2warden.git"
 warden env exec -T php-fpm bash -c "composer require --dev jaroslawzielinski/magento2warden dev-master"
 warden env exec -T php-fpm bash -c "sh vendor/jaroslawzielinski/magento2warden/setup.sh"
 :: "Finished."

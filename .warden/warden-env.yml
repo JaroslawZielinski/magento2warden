@@ -8,10 +8,10 @@ services:
     env_file:
       - .env
     ports:
-        - "22:22"
-        - "990:990"
+      - "22:22"
+      - "990:990"
     secrets:
-        - host_ssh_key
+      - host_ssh_key
     volumes:
       - rootcert:/etc/ssl/warden-rootca-cert
       - composer:/home/www-data/.composer
@@ -19,62 +19,16 @@ services:
       - .env:/var/www/.env
       - ~/.ssh:/root/.ssh-keys:ro
     environment:
-        SSH_USER: $USER
-#    networks:
-#      warden:
-#        ipv4_address: 174.28.1.1
+      SSH_USER: $USER
 
   db:
-#    command:
-#      - --max_allowed_packet=1024M
-#      - --innodb_strict_mode=0
     volumes:
       - "./data/db/mysql:/var/lib/mysql"
-#    networks:
-#      warden:
-#        ipv4_address: 174.28.1.2
-
-  varnish:
-#    networks:
-#      warden:
-#        ipv4_address: 174.28.1.3
-
-  php-debug:
-#    networks:
-#      warden:
-#        ipv4_address: 174.28.1.4
-
-  nginx:
-#    networks:
-#      warden:
-#        ipv4_address: 174.28.1.5
-
-  redis:
-#    networks:
-#      warden:
-#        ipv4_address: 174.28.1.6
-
-  elasticsearch:
-#    networks:
-#      warden:
-#        ipv4_address: 174.28.1.7
-
-  rabbitmq:
-#    networks:
-#      warden:
-#        ipv4_address: 174.28.1.8
 
 volumes:
   rootcert: {}
   composer: {}
 
 secrets:
-    host_ssh_key:
-        file: ~/.ssh/id_rsa
-
-#networks:
-#  warden:
-#    ipam:
-#      driver: default
-#      config:
-#        - subnet: 174.28.0.0/16
+  host_ssh_key:
+    file: ~/.ssh/id_rsa
