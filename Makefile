@@ -38,8 +38,12 @@ theme: ## Theme
 	make fix-dbpermissions
 	./includes/fix-elasticsearch.sh
 	./includes/theme.sh
+	./includes/indfix.sh
 	./includes/adminuser.sh
 	make db-ip urls mailhog
+
+indfix: ## IndFix
+	./includes/indfix.sh
 
 assets: ## Assets
 	make fix-dbpermissions
@@ -82,6 +86,10 @@ devurnfix: ## Magento Dev URN Regenerate
 jarkokit: ## JaroslawZielinski Github Utils
 	./includes/jarkokit.sh
 	make theme
+
+fix-elastic: ## Fix Elastic
+	./includes/fix-elasticsearch.sh
+	make cache
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
