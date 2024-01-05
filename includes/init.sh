@@ -22,8 +22,8 @@ META_VERSION=2.4.x
 warden env exec -T php-fpm bash -c "
 composer create-project --repository-url=https://repo.magento.com/ \
     \"${META_PACKAGE}\" /tmp/exampleproject \"${META_VERSION}\"
-#rsync -a /tmp/exampleproject/ /var/www/html/
-#rm -rf /tmp/exampleproject/
+rsync -a /tmp/exampleproject/ /var/www/html/
+rm -rf /tmp/exampleproject/
 "
 warden env exec -T php-fpm bash -c "composer require --dev jaroslawzielinski/magento2warden dev-master"
 warden env exec -T php-fpm bash -c "sh vendor/jaroslawzielinski/magento2warden/setup.sh"
