@@ -9,5 +9,11 @@
             "email": "jarek.zielinski82@gmail.com"
         }
     ],
+    "funding": [
+        {
+          "type": "By me a coffee",
+          "url": "https://www.buymeacoffee.com/jaroslawzielinski"
+        }
+    ],
     "require": {}
 }
