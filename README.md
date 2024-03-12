@@ -1,6 +1,8 @@
 # magento2warden
 Magento2 project using warden
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jaroslawzielinski)
+
 # how to use shell commands
 in [packagist](https://packagist.org/packages/jaroslawzielinski/magento2warden)
 ```ssh
