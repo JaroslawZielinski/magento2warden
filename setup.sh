@@ -238,12 +238,12 @@ else
   echo "\"includes/indfix.sh\" already exists."
 fi
 
-if [ ! -f "dbtests/config.cnf" ];
+if [ ! -f "dbtests/config.env" ];
 then
-  echo "\"dbtests/config.cnf\" copied."
-  cp vendor/jaroslawzielinski/magento2warden/dbtests/config.cnf dbtests/
+  echo "\"dbtests/config.env\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/dbtests/config.env dbtests/
 else
-  echo "\"dbtests/config.cnf\" already exists."
+  echo "\"dbtests/config.env\" already exists."
 fi
 
 if [ ! -f "dbtests/idFinder.sh" ];
