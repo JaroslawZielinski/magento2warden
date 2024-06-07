@@ -23,33 +23,24 @@ HIGHLIGHTED='\033[1;33m'
 NC='\033[0m'
 ################### INPUT
 ##### set default values
-db=magento
-cfg=config.cnf
+set -a
+source <(cat config.env | \
+    sed -e '/^#/d;/^\s*$/d' -e "s/'/'\\\''/g" -e "s/=\(.*\)/='\1'/g")
+set +a
 w=bug_fix
 
 ##### read them from command line
 while [ "$#" -gt 0 ]; do
   case "$1" in
-    -db) db="$2"; shift 2;;
-    -cfg) cfg="$2"; shift 2;;
     -w) w="$2"; shift 2;;
 
-    --data-base=*) db="${1#*=}"; shift 1;;
-    --config-file=*) cfg="${1#*=}"; shift 1;;
     --word=*) w="${1#*=}"; shift 1;;
-    --data-base|--config-file|--word) echo "$1 requires an argument" >&2; exit 1;;
+    --word) echo "$1 requires an argument" >&2; exit 1;;
 
     -*) echo "unknown option: $1" >&2; exit 1;;
     *) handle_argument "$1"; shift 1;;
   esac
 done
-
-##### validation and reformat of input
-if [ ! -f $cfg ];
-then
-  echo "The config file is not there $cfg" >&2
-  exit 1
-fi
 
 # to lower case
 w=$(echo $w | awk '{ print tolower($0) }')
@@ -58,13 +49,13 @@ w=$(echo $w | awk '{ print tolower($0) }')
 IFS='
 '
 count=0
-for i in `mysql --defaults-extra-file=$cfg $db -e "SHOW TABLES" | grep -v \`mysql --defaults-extra-file=$cfg $db -e "SHOW TABLES" | head -1\``
+for i in `mysql -h ${HOST} -u ${USER} -p${PASSWORD} ${DB} -e "SHOW TABLES" | grep -v \`mysql -h ${HOST} -u ${USER} -p${PASSWORD} ${DB} -e "SHOW TABLES" | head -1\``
 do
-    for k in `mysql --defaults-extra-file=$cfg $db -e "DESC $i" | grep -v \`mysql --defaults-extra-file=$cfg $db -e "DESC $i" | head -1\` | awk '{print $1}'`
+    for k in `mysql -h ${HOST} -u ${USER} -p${PASSWORD} ${DB} -e "DESC $i" | grep -v \`mysql -h ${HOST} -u ${USER} -p${PASSWORD} ${DB} -e "DESC $i" | head -1\` | awk '{print $1}'`
     do
-        if [ `mysql --defaults-extra-file=$cfg $db -e "SELECT * FROM $i WHERE $k=$w" | wc -l` -gt 1 ]
+        if [ `mysql -h ${HOST} -u ${USER} -p${PASSWORD} ${DB} -e "SELECT * FROM $i WHERE $k=$w" | wc -l` -gt 1 ]
         then
-            mysql --defaults-extra-file=$cfg $db -e "SELECT * FROM $i WHERE $k=$w;" >> "${i}-${k}.txt"
+            mysql -h ${HOST} -u ${USER} -p${PASSWORD} ${DB} -e "SELECT * FROM $i WHERE $k=$w;" >> "${i}-${k}.txt"
 	    count=$((count+1))
         fi
     done
