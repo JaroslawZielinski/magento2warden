@@ -6,11 +6,11 @@ init: ## Init
 	./includes/init.sh
 
 docker-up: ## Docker Up
-	@echo "Dockers UP"
+	./includes/dockerup.sh
 	warden env up -d
 
 docker-down: ## Docker Down
-	@echo "Dockers Down"
+	./includes/dockerdown.sh
 	warden env down -v
 
 docker-restart: ## Docker Restart
@@ -50,6 +50,10 @@ assets: ## Assets
 	./includes/assets.sh
 	make db-ip urls mailhog
 
+elastic-limit: ## Elastic Limit
+	./includes/fix-elasticsearch-limit.sh
+	make cache
+
 revendor: ## Revendor
 	./includes/revendor.sh
 
@@ -81,10 +85,6 @@ mageplaza: ## Install Mageplaza Smtp Module
 devurnfix: ## Magento Dev URN Regenerate
 	./includes/devurnfix.sh
 	make cache
-
-jarkokit: ## JaroslawZielinski Github Utils
-	./includes/jarkokit.sh
-	make theme
 
 fix-elastic: ## Fix Elastic
 	./includes/fix-elasticsearch.sh
