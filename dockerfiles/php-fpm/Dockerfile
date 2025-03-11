@@ -1,4 +1,4 @@
-FROM docker.io/wardenenv/php-fpm:8.1-magento2
+FROM docker.io/wardenenv/php-fpm:8.3-magento2
 USER root
 # Install missing dependencies
 RUN yum -y update

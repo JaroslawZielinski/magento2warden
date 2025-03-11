@@ -1,5 +1,3 @@
-version: "3.5"
-
 services:
   php-fpm:
     image: ${PHP_IMAGE_NAME}
@@ -25,9 +23,26 @@ services:
     volumes:
       - "./data/db/mysql:/var/lib/mysql"
 
+  elasticsearch:
+    hostname: "${WARDEN_ENV_NAME}-elasticsearch"
+    image: ${WARDEN_IMAGE_REPOSITORY}/elasticsearch:${ELASTICSEARCH_VERSION:-8.11}
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-elasticsearch.tls=true
+      - traefik.http.routers.${WARDEN_ENV_NAME}-elasticsearch.rule=Host(`elasticsearch.${TRAEFIK_DOMAIN}`)
+      - traefik.http.services.${WARDEN_ENV_NAME}-elasticsearch.loadbalancer.server.port=9200
+      - traefik.docker.network=${WARDEN_ENV_NAME}_default
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms16g -Xmx16g"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
 volumes:
   rootcert: {}
   composer: {}
+  esdata:
 
 secrets:
   host_ssh_key:

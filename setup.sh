@@ -3,7 +3,6 @@
 mkdir -p .warden/conf
 mkdir -p dockerfiles/php-fpm/.composer
 mkdir -p includes
-mkdir -p 2fa_credentials
 mkdir -p dbtests
 
 if [ ! -f ".env.dist" ];
@@ -70,6 +69,14 @@ else
   echo "\"includes/adminuser.sh\" already exists."
 fi
 
+if [ ! -f "includes/assets.sh" ];
+then
+  echo "\"includes/assets.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/assets.sh includes/
+else
+  echo "\"includes/assets.sh\" already exists."
+fi
+
 if [ ! -f "includes/cache.sh" ];
 then
   echo "\"includes/cache.sh\" copied."
@@ -94,12 +101,36 @@ else
   echo "\"includes/dbip.sh\" already exists."
 fi
 
+if [ ! -f "includes/devurnfix.sh" ];
+then
+  echo "\"includes/devurnfix.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/devurnfix.sh includes/
+else
+  echo "\"includes/devurnfix.sh\" already exists."
+fi
+
 if [ ! -f "includes/docker-destroy.sh" ];
 then
   echo "\"includes/docker-destroy.sh\" copied."
   cp vendor/jaroslawzielinski/magento2warden/includes/docker-destroy.sh includes/
 else
   echo "\"includes/docker-destroy.sh\" already exists."
+fi
+
+if [ ! -f "includes/dockerdown.sh" ];
+then
+  echo "\"includes/dockerdown.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/dockerdown.sh includes/
+else
+  echo "\"includes/dockerdown.sh\" already exists."
+fi
+
+if [ ! -f "includes/dockerup.sh" ];
+then
+  echo "\"includes/dockerup.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/dockerup.sh includes/
+else
+  echo "\"includes/dockerup.sh\" already exists."
 fi
 
 if [ ! -f "includes/fix-dbpermissions.sh" ];
@@ -116,6 +147,22 @@ then
   cp vendor/jaroslawzielinski/magento2warden/includes/fix-elasticsearch.sh includes/
 else
   echo "\"includes/fix-elasticsearch.sh\" already exists."
+fi
+
+if [ ! -f "includes/fix-elasticsearch-limit.sh" ];
+then
+  echo "\"includes/fix-elasticsearch-limit.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/fix-elasticsearch-limit.sh includes/
+else
+  echo "\"includes/fix-elasticsearch-limit.sh\" already exists."
+fi
+
+if [ ! -f "includes/indfix.sh" ];
+then
+  echo "\"includes/indfix.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/indfix.sh includes/
+else
+  echo "\"includes/indfix.sh\" already exists."
 fi
 
 if [ ! -f "includes/init.sh" ];
@@ -198,44 +245,12 @@ else
   echo "\"includes/theme.sh\" already exists."
 fi
 
-if [ ! -f "includes/assets.sh" ];
-then
-  echo "\"includes/assets.sh\" copied."
-  cp vendor/jaroslawzielinski/magento2warden/includes/assets.sh includes/
-else
-  echo "\"includes/assets.sh\" already exists."
-fi
-
 if [ ! -f "includes/urls.sh" ];
 then
   echo "\"includes/urls.sh\" copied."
   cp vendor/jaroslawzielinski/magento2warden/includes/urls.sh includes/
 else
   echo "\"includes/urls.sh\" already exists."
-fi
-
-if [ ! -f "includes/devurnfix.sh" ];
-then
-  echo "\"includes/devurnfix.sh\" copied."
-  cp vendor/jaroslawzielinski/magento2warden/includes/devurnfix.sh includes/
-else
-  echo "\"includes/devurnfix.sh\" already exists."
-fi
-
-if [ ! -f "includes/jarkokit.sh" ];
-then
-  echo "\"includes/jarkokit.sh\" copied."
-  cp vendor/jaroslawzielinski/magento2warden/includes/jarkokit.sh includes/
-else
-  echo "\"includes/jarkokit.sh\" already exists."
-fi
-
-if [ ! -f "includes/indfix.sh" ];
-then
-  echo "\"includes/indfix.sh\" copied."
-  cp vendor/jaroslawzielinski/magento2warden/includes/indfix.sh includes/
-else
-  echo "\"includes/indfix.sh\" already exists."
 fi
 
 if [ ! -f "dbtests/config.env" ];
