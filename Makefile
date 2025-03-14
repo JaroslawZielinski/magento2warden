@@ -30,7 +30,7 @@ urls: ## Show Urls
 
 cache: ## Cache
 	./includes/cache.sh
-	make db-ip urls mailhog
+	make db-ip urls mailhog elastic-url
 
 theme: ## Theme
 	rm -rf generated/
@@ -39,7 +39,7 @@ theme: ## Theme
 	./includes/theme.sh
 	./includes/indfix.sh
 	./includes/adminuser.sh
-	make db-ip urls mailhog
+	make db-ip urls mailhog elastic-url
 
 indfix: ## IndFix
 	./includes/indfix.sh
@@ -48,11 +48,14 @@ assets: ## Assets
 	make fix-dbpermissions
 	./includes/fix-elasticsearch.sh
 	./includes/assets.sh
-	make db-ip urls mailhog
+	make db-ip urls mailhog elastic-url
 
 elastic-limit: ## Elastic Limit
 	./includes/fix-elasticsearch-limit.sh
 	make cache
+
+elastic-url: ## Elastic Url
+	./includes/elasticurl.sh
 
 revendor: ## Revendor
 	./includes/revendor.sh
