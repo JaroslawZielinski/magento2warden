@@ -133,6 +133,14 @@ else
   echo "\"includes/dockerup.sh\" already exists."
 fi
 
+if [ ! -f "includes/elasticurl.sh" ];
+then
+  echo "\"includes/elasticurl.sh\" copied."
+  cp vendor/jaroslawzielinski/magento2warden/includes/elasticurl.sh includes/
+else
+  echo "\"includes/elasticurl.sh\" already exists."
+fi
+
 if [ ! -f "includes/fix-dbpermissions.sh" ];
 then
   echo "\"includes/fix-dbpermissions.sh\" copied."
