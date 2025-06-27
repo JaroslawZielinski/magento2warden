@@ -40,6 +40,11 @@ theme: ## Theme
 	./includes/indfix.sh
 	./includes/adminuser.sh
 	make db-ip urls mailhog elastic-url
+tea: ## alias for Theme
+	make theme
+
+thee: ## alias for Theme
+	make theme
 
 indfix: ## IndFix
 	./includes/indfix.sh
