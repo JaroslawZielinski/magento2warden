@@ -1,6 +1,9 @@
 #!/bin/bash
 source includes/core.sh
 :: "Start"
+SED=`which sed`
+source includes/dbip.sh
+$SED -i "s/^\(HOST\s*=\s*\).*\$/\1$mysqlIP/" dbtests/config.env
 warden env exec -T php-fpm bin/magento setup:upgrade
 warden env exec -T php-fpm bin/magento setup:di:compile
 warden env exec -T php-fpm bin/magento setup:static-content:deploy -f en_US fr_FR de_DE it_IT

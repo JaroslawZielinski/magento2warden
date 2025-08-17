@@ -32,6 +32,9 @@ cache: ## Cache
 	./includes/cache.sh
 	make db-ip urls mailhog elastic-url
 
+coffee: ## alias for Cache
+	make cache
+
 theme: ## Theme
 	rm -rf generated/
 	make fix-dbpermissions
