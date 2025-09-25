@@ -35,6 +35,9 @@ cache: ## Cache
 coffee: ## alias for Cache
 	make cache
 
+delight: ## alias for Cache
+	make cache
+
 theme: ## Theme
 	rm -rf generated/
 	make fix-dbpermissions
@@ -43,6 +46,7 @@ theme: ## Theme
 	./includes/indfix.sh
 	./includes/adminuser.sh
 	make db-ip urls mailhog elastic-url
+
 tea: ## alias for Theme
 	make theme
 
@@ -56,7 +60,12 @@ assets: ## Assets
 	make fix-dbpermissions
 	./includes/fix-elasticsearch.sh
 	./includes/assets.sh
-	make db-ip urls mailhog elastic-url
+
+cold-brew: ## alias for Assets
+	make assets
+
+turkish: ## alias for Assets
+	make assets
 
 elastic-limit: ## Elastic Limit
 	./includes/fix-elasticsearch-limit.sh
