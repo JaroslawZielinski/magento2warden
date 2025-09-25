@@ -3,7 +3,7 @@ Magento2 project using warden
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jaroslawzielinski)
 
-# how to use shell commands
+# How to use shell commands
 in [packagist](https://packagist.org/packages/jaroslawzielinski/magento2warden)
 ```ssh
 cd YourProject
@@ -20,8 +20,16 @@ and finally
 make docker-down init theme
 ```
 
-# possbile errors
-## database error
+# Aliases
+
+* `make tea` (= make theme)
+* `make thee` (= make theme)
+* `make turkish delight` (= make assets cache)
+* `make cold-brew coffee` (= make assets cache)
+* `make coffee` (= make cache)
+
+# Possible errors
+## Database error
 ### ERROR 1130 (HY000): Host '' is not allowed to connect to this MySQL server
 
 Your root account, and this statement applies to any account, may only have been added with localhost access (which is recommended).
