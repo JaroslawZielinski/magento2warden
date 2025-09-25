@@ -40,6 +40,8 @@ delight: ## alias for Cache
 
 theme: ## Theme
 	rm -rf generated/
+	rm -rf pub/static/adminhtml/
+	rm -rf pub/static/frontend/
 	make fix-dbpermissions
 	./includes/fix-elasticsearch.sh
 	./includes/theme.sh
@@ -57,6 +59,7 @@ indfix: ## IndFix
 	./includes/indfix.sh
 
 assets: ## Assets
+	rm -rf var/view_preprocessed/pub/static/
 	make fix-dbpermissions
 	./includes/fix-elasticsearch.sh
 	./includes/assets.sh
